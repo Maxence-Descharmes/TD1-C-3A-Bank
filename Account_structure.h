@@ -9,7 +9,7 @@ class Account_structure
 {
     private : 
     std::string name_ = "";
-    float sold_ = 0;
+    float sold_ = 15;
     int account_number_ = 0;
     std::vector<float> account_history_ = {};
     std::string password_ = "";
@@ -21,7 +21,7 @@ class Account_structure
     bool enoughMoney(float amount);
     void transferMoney(std::string sender, std::string receiver, float amount);
     void addAccountHistory(float amount);
-
+    void viewHistoy();
 };
 
 #endif ACCOUNT_STRUCTURE_H
