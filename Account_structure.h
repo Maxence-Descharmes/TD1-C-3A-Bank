@@ -11,16 +11,16 @@ class Account_structure
     std::string name_ = "";
     float sold_ = 0;
     int account_number_ = 0;
-    std::vector<float> account_history = {};
+    std::vector<float> account_history_ = {};
     std::string password_ = "";
 
     public :
     Account_structure() ;
     float getSold();
     void withdrawal(float amount);
-    bool enoughMoney();
+    bool enoughMoney(float amount);
     void transferMoney(std::string sender, std::string receiver, float amount);
-    void addAccountHistory();
+    void addAccountHistory(float amount);
 
 };
 
