@@ -1,4 +1,5 @@
 #include <string>
+#include "Account.h"
 class Client {
     public:
         Client(std::string name= "Not set", std::string email= "Not set", std::string phone= "Not set", std::string adress= "Not set", std::string password= "Not set", int client_number= 0000, Account account);
@@ -13,7 +14,7 @@ class Client {
         float setBills();
         int client_number_;
         std::string password_;
-        bool verifyConnection();
+        bool verifyConnection(std::string password_account);
 
 
 };

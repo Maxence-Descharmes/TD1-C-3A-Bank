@@ -23,7 +23,7 @@ float Client::setBills(){
     return total;
 }
 
-bool Client::verifyConnection(){
+bool Client::verifyConnection(std::string password_real){
     int number;
     std::string pass;
     std::cout << "Please enter your client number : ";
@@ -32,7 +32,7 @@ bool Client::verifyConnection(){
     if(number == client_number_){
         std::cout << "Please enter your password : ";
         std::cin >> pass;
-        if(pass == password_){
+        if(pass == password_real){
             return true;
         }else{
             return false;
