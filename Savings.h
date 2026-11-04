@@ -8,13 +8,10 @@
 class Savings : public Account_structure {
 
     private :
-    std::string name_ = "";
-    float sold_ = 0;
-    std::vector<float> account_history = {};
-    float interest_rate = 1.7;
+    float savings_sold_;
 
     public :
-    Savings();
+    Savings(std::string name, float sold, int account_number, std::vector<float> account_history, std::string password, float savings_sold);
     void obtainInterest();
 };
 

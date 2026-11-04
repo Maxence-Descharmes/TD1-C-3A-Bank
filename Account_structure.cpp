@@ -1,7 +1,7 @@
 #include "Account_structure.h"
 
-Account_structure::Account_structure(std::string name_, float sold_, int account_number_, std::vector<float> account_history_, std::string password_)
-: name_(""), sold_(15), account_number_(0), account_history_({}), password_(0)
+Account_structure::Account_structure(std::string name, float sold, int account_number, std::vector<float> account_history, std::string password)
+: name_(name), sold_(sold), account_number_(account_number), account_history_(account_history), password_(password)
 {
 }
 
@@ -57,4 +57,5 @@ void Account_structure::viewHistoy()
     for(int i = 0; i < size(account_history_); i++){
         std::cout << account_history_[i] << " | ";
     }
+    std::cout << std::endl;
 }

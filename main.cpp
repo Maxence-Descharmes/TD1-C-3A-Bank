@@ -1,9 +1,11 @@
 #include "Account_structure.h"
+#include "Savings.h"
 
 
 int main(){
     //Initialisation 
-    Account_structure account_structure;
+    Account_structure account_structure("", 15, 0, {}, "no password");
+    Savings savings("Savings", 0, 0, {}, "no password", 1.7);
 
     std::cout << "Welcome to your online bank" << std::endl;
     std::cout << "You have " << account_structure.getSold() << " money" << std::endl;
@@ -13,5 +15,6 @@ int main(){
     account_structure.addAccountHistory(10);
     account_structure.addAccountHistory(2.5);
     account_structure.viewHistoy();
+    savings.obtainInterest();
     return 0;
 }

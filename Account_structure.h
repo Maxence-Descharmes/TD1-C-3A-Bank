@@ -15,7 +15,7 @@ class Account_structure
     std::string password_;
 
     public :
-    Account_structure(std::string name_, float sold_, int account_number_, std::vector<float> account_history_, std::string password_) ;
+    Account_structure(std::string name, float sold, int account_number, std::vector<float> account_history, std::string password) ;
     float getSold();
     void withdrawal(float amount);
     bool enoughMoney(float amount);
