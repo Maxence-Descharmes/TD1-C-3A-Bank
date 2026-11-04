@@ -1,6 +1,7 @@
 #include "Account_structure.h"
 
-Account_structure::Account_structure()
+Account_structure::Account_structure(std::string name_, float sold_, int account_number_, std::vector<float> account_history_, std::string password_)
+: name_(""), sold_(15), account_number_(0), account_history_({}), password_(0)
 {
 }
 
@@ -30,8 +31,18 @@ bool Account_structure::enoughMoney(float amount)
     }
 }
 
-void Account_structure::transferMoney(std::string sender, std::string receiver, float amount)
+void Account_structure::transferMoney(std::string receiver, float amount)
 {
+    if (Account_structure::enoughMoney(amount) == true){
+        sold_ -= amount;
+        std::cout << "You give money to" << receiver << std::endl;
+        if (receiver == "Savings") {
+            //
+        }
+        Account_structure::addAccountHistory(amount);
+    }
+    else
+        std::cout << "You don't have enough money" << std::endl;
 
 }
 
@@ -42,7 +53,8 @@ void Account_structure::addAccountHistory(float amount)
 
 void Account_structure::viewHistoy()
 {
+    std::cout << "Here is your account history" << std::endl;
     for(int i = 0; i < size(account_history_); i++){
-        std::cout << account_history_[i] << std::endl;
+        std::cout << account_history_[i] << " | ";
     }
 }
