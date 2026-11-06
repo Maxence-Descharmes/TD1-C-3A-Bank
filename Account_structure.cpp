@@ -12,7 +12,7 @@ float Account_structure::getSold()
 
 void Account_structure::setSold(float amount)
 {
-    sold_ = amount;
+    sold_ += amount;
     
 }
 
@@ -20,11 +20,13 @@ void Account_structure::withdrawal(float amount)
 {
     if (Account_structure::enoughMoney(amount) == true){
         sold_ -= amount;
-        std::cout << "You withdraw " << amount << " money" << std::endl;   
+        std::cout << "You withdraw " << amount << " money" << std::endl;
+        Account_structure::addAccountHistory(amount);   
     }
     else {
         std::cout << "You don't have enough money" << std::endl;
     }
+
 }
 
 bool Account_structure::enoughMoney(float amount)
