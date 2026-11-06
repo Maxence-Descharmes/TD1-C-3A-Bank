@@ -10,6 +10,12 @@ float Account_structure::getSold()
     return sold_;
 }
 
+void Account_structure::setSold(float amount)
+{
+    sold_ = amount;
+    
+}
+
 void Account_structure::withdrawal(float amount)
 {
     if (Account_structure::enoughMoney(amount) == true){
