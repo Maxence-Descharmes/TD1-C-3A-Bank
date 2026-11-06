@@ -10,15 +10,23 @@ float Account_structure::getSold()
     return sold_;
 }
 
+void Account_structure::setSold(float amount)
+{
+    sold_ += amount;
+    
+}
+
 void Account_structure::withdrawal(float amount)
 {
     if (Account_structure::enoughMoney(amount) == true){
         sold_ -= amount;
-        std::cout << "You withdraw " << amount << " money" << std::endl;   
+        std::cout << "You withdraw " << amount << " money" << std::endl;
+        Account_structure::addAccountHistory(amount);   
     }
     else {
         std::cout << "You don't have enough money" << std::endl;
     }
+
 }
 
 bool Account_structure::enoughMoney(float amount)
@@ -57,6 +65,7 @@ void Account_structure::viewHistoy()
     for(int i = 0; i < size(account_history_); i++){
         std::cout << account_history_[i] << " | ";
     }
+    std::cout << std::endl;
 }
 
 std::string Account_structure::getPassword()
