@@ -67,3 +67,8 @@ void Account_structure::viewHistoy()
     }
     std::cout << std::endl;
 }
+
+std::string Account_structure::getPassword()
+{
+    return password_;
+}

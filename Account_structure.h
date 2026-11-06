@@ -4,7 +4,7 @@
 
 #ifndef ACCOUNT_STRUCTURE_H
 #define ACCOUNT_STRUCTURE_H
-
+#include "Client.h"
 class Account_structure 
 {
     private : 
@@ -23,6 +23,7 @@ class Account_structure
     void transferMoney(std::string receiver, float amount);
     void addAccountHistory(float amount);
     void viewHistoy();
+    std::string getPassword();
 };
 
 #endif ACCOUNT_STRUCTURE_H
