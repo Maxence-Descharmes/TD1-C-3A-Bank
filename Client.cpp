@@ -2,8 +2,8 @@
 #include <iostream>
 #include <string>
 
-Client::Client(std::string name, std::string email, std::string phone, std::string adress, std::string password,int client_number, Account account) :
-    name_(name), email_(email), phone_number_(phone), adress_(adress), password_(password), account_(account), client_number_(client_number), bills_(setBills()){
+Client::Client(std::string name, std::string email, std::string phone, std::string adress, int client_number, Account account) :
+    name_(name), email_(email), phone_number_(phone), adress_(adress), account_(account), client_number_(client_number), bills_(setBills()){
     }
 
 std::string Client::getName(){
@@ -40,5 +40,8 @@ bool Client::verifyConnection(std::string password_real){
     }else{
         return false;
     }
-    
+}
+
+float Client::getBills(){
+    return bills_;
 }

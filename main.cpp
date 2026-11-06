@@ -3,7 +3,7 @@
 
 int main(){
     //Initialisation 
-    Account_structure account_structure;
+    Account_structure account_structure("",15,0,{},"test");
 
     std::cout << "Welcome to your online bank" << std::endl;
     std::cout << "You have " << account_structure.getSold() << " money" << std::endl;

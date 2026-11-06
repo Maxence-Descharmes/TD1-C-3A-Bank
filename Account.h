@@ -1,20 +1,22 @@
+#ifndef ACCOUNT_H
+#define ACCOUNT_H
 #include <string>
 #include <vector>
 #include <Client.h>
+#include <iostream>
+#include <Account_structure.h>
 
-class Account{
+class Account : public Account_structure{
 
     public:
-        Account(std::string name="Not set",float sold=0, Client client);
+        Account(std::string name,float sold,int account_number, std::vector<float> account_history, std::string password, Client client);
         void changePassword();
-        void payBills();
+        void payBills(Account_structure acccount_struct);
         void makeCredit();
     
     private:
-        float sold_;
-        std::string password_ = " ";
-        std::vector<float> account_history_;
-        std::string name_;
         Client client_;
 
-}
+};
+
+#endif ACCOUNT_H
